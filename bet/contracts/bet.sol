@@ -1,4 +1,4 @@
-pragma solidity ^0.4.22;
+pragma solidity >= 0.5.0;
 
 
 contract Bet {
@@ -55,9 +55,9 @@ contract Bet {
       
   }
 
-  constructor (string _bet_name,
+  constructor (string memory _bet_name,
 	      address _challenged,
-	      address[] _judges,
+	      address[] memory _judges,
 	      uint _threshold,
 	      uint _deadline) public payable {
 
@@ -211,7 +211,7 @@ contract Bet {
 
     emit Owed(initiator,owed_initiator);
     emit Owed(challenged, owed_challenged);
-    emit changeState(state);
+    emit stateChange(state);
 
   }
 

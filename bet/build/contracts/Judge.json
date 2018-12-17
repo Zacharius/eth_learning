@@ -1,0 +1,359 @@
+{
+  "contractName": "Judge",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "cont",
+          "type": "address"
+        }
+      ],
+      "name": "castVote",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint8"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "pragma solidity >= 0.5.0;\n\ninterface Judge {\n\n\n  enum Vote { Null, Initiator, Challenged, Hung }\n\n  function castVote (address cont) external returns (Vote) ;\n}\n",
+  "sourcePath": "/home/z/prj/eth/learning/bet/contracts/judge_interface.sol",
+  "ast": {
+    "absolutePath": "/home/z/prj/eth/learning/bet/contracts/judge_interface.sol",
+    "exportedSymbols": {
+      "Judge": [
+        725
+      ]
+    },
+    "id": 726,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 712,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:25:2"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 725,
+        "linearizedBaseContracts": [
+          725
+        ],
+        "name": "Judge",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "Judge.Vote",
+            "id": 717,
+            "members": [
+              {
+                "id": 713,
+                "name": "Null",
+                "nodeType": "EnumValue",
+                "src": "61:4:2"
+              },
+              {
+                "id": 714,
+                "name": "Initiator",
+                "nodeType": "EnumValue",
+                "src": "67:9:2"
+              },
+              {
+                "id": 715,
+                "name": "Challenged",
+                "nodeType": "EnumValue",
+                "src": "78:10:2"
+              },
+              {
+                "id": 716,
+                "name": "Hung",
+                "nodeType": "EnumValue",
+                "src": "90:4:2"
+              }
+            ],
+            "name": "Vote",
+            "nodeType": "EnumDefinition",
+            "src": "49:47:2"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 724,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "castVote",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 720,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 719,
+                  "name": "cont",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 724,
+                  "src": "119:12:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 718,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "119:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "118:14:2"
+            },
+            "returnParameters": {
+              "id": 723,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 722,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 724,
+                  "src": "151:4:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_Vote_$717",
+                    "typeString": "enum Judge.Vote"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 721,
+                    "name": "Vote",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 717,
+                    "src": "151:4:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_Vote_$717",
+                      "typeString": "enum Judge.Vote"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "150:6:2"
+            },
+            "scope": 725,
+            "src": "100:58:2",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 726,
+        "src": "27:133:2"
+      }
+    ],
+    "src": "0:161:2"
+  },
+  "legacyAST": {
+    "absolutePath": "/home/z/prj/eth/learning/bet/contracts/judge_interface.sol",
+    "exportedSymbols": {
+      "Judge": [
+        725
+      ]
+    },
+    "id": 726,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 712,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:25:2"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 725,
+        "linearizedBaseContracts": [
+          725
+        ],
+        "name": "Judge",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "Judge.Vote",
+            "id": 717,
+            "members": [
+              {
+                "id": 713,
+                "name": "Null",
+                "nodeType": "EnumValue",
+                "src": "61:4:2"
+              },
+              {
+                "id": 714,
+                "name": "Initiator",
+                "nodeType": "EnumValue",
+                "src": "67:9:2"
+              },
+              {
+                "id": 715,
+                "name": "Challenged",
+                "nodeType": "EnumValue",
+                "src": "78:10:2"
+              },
+              {
+                "id": 716,
+                "name": "Hung",
+                "nodeType": "EnumValue",
+                "src": "90:4:2"
+              }
+            ],
+            "name": "Vote",
+            "nodeType": "EnumDefinition",
+            "src": "49:47:2"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 724,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "castVote",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 720,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 719,
+                  "name": "cont",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 724,
+                  "src": "119:12:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 718,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "119:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "118:14:2"
+            },
+            "returnParameters": {
+              "id": 723,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 722,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 724,
+                  "src": "151:4:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_Vote_$717",
+                    "typeString": "enum Judge.Vote"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 721,
+                    "name": "Vote",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 717,
+                    "src": "151:4:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_Vote_$717",
+                      "typeString": "enum Judge.Vote"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "150:6:2"
+            },
+            "scope": 725,
+            "src": "100:58:2",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 726,
+        "src": "27:133:2"
+      }
+    ],
+    "src": "0:161:2"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.0+commit.1d4f565a.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.0-beta.2",
+  "updatedAt": "2018-12-17T19:43:35.251Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

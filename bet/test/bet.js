@@ -1,19 +1,21 @@
 var Bet = artifacts.require('Bet');
 
-
+// 
 contract('bet', async (accounts) => {
 
     var initiator = accounts[0];
     var challenged = accounts[1];
     var judges = [8];
+    
 
     for(let i=2; i<accounts.length; i++) {
 	judges[i-2] = accounts[i];
     }
 
 
+
     var bet_name = 'test';
-    var amount = web3.toWei(1, 'ether');
+    var amount = web3.utils.toWei('1', 'ether');
     var threshold = 30;
     var deadline = new Date('2019-12-16T14:10:00').getTime() / 1000;
 
@@ -39,6 +41,7 @@ contract('bet', async (accounts) => {
     };
     
     beforeEach ( async function()  {
+	
 	inst = await Bet.new(bet_name,
 			     challenged,
 			     judges,
@@ -323,7 +326,7 @@ contract('bet', async (accounts) => {
 
     function checkDiff(old, nu, expect) {
 	var diff = nu - old;
-	maxgas = web3.toWei(16000000, 'gwei');
+	maxgas = web3.utils.toWei('16000000', 'gwei');
 
 	if (diff <= expect && diff >= (expect-maxgas)){
 	    return true;
