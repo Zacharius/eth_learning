@@ -151,11 +151,13 @@ contract Bet {
   }
 
   //allow judges to vote
-  function castVote(Vote vote) public checkState {
+  function castVote(uint int_vote) public checkState {
     require(votes[msg.sender] != Vote.Null,
 	    'Only judges can vote');
     require(state == State.Judgement,
 	    'It is not yet the time of reckoning');
+
+    Vote vote = Vote(int_vote);
 
     votes[msg.sender] = vote;
     emit Voted(msg.sender, vote);

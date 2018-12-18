@@ -1,0 +1,771 @@
+{
+  "contractName": "Simple_Judge",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "bet_contract",
+          "type": "address"
+        }
+      ],
+      "name": "castVote",
+      "outputs": [
+        {
+          "name": "vote",
+          "type": "uint8"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x608060405234801561001057600080fd5b50610185806100206000396000f3fe608060405260043610610041576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806353358fc414610046575b600080fd5b34801561005257600080fd5b506100956004803603602081101561006957600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506100b9565b604051808260038111156100a557fe5b60ff16815260200191505060405180910390f35b6000600390508173ffffffffffffffffffffffffffffffffffffffff16633eb76b9c8260038111156100e757fe5b6040518263ffffffff167c010000000000000000000000000000000000000000000000000000000002815260040180828152602001915050600060405180830381600087803b15801561013957600080fd5b505af115801561014d573d6000803e3d6000fd5b5050505080905091905056fea165627a7a72305820737cea4da15d0dc9ba7b63726d307bbce8789119a4f70b34266bc4333a29c76c0029",
+  "deployedBytecode": "0x608060405260043610610041576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806353358fc414610046575b600080fd5b34801561005257600080fd5b506100956004803603602081101561006957600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506100b9565b604051808260038111156100a557fe5b60ff16815260200191505060405180910390f35b6000600390508173ffffffffffffffffffffffffffffffffffffffff16633eb76b9c8260038111156100e757fe5b6040518263ffffffff167c010000000000000000000000000000000000000000000000000000000002815260040180828152602001915050600060405180830381600087803b15801561013957600080fd5b505af115801561014d573d6000803e3d6000fd5b5050505080905091905056fea165627a7a72305820737cea4da15d0dc9ba7b63726d307bbce8789119a4f70b34266bc4333a29c76c0029",
+  "sourceMap": "80:259:3:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;80:259:3;;;;;;;",
+  "deployedSourceMap": "80:259:3:-;;;;;;;;;;;;;;;;;;;;;;;;116:218;;8:9:-1;5:2;;;30:1;27;20:12;5:2;116:218:3;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;116:218:3;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;170:9;194;187:16;;279:12;:21;;;306:4;301:10;;;;;;;;279:33;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;279:33:3;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;279:33:3;;;;325:4;318:11;;116:218;;;:::o",
+  "source": "pragma solidity 0.5.0;\n\nimport './judge_interface.sol' ;\nimport './bet.sol' ;\n\n\ncontract Simple_Judge is Judge {\n\n  function castVote(Bet bet_contract) external returns (Vote vote) {\n    vote = Vote.Hung;\n    //uint uvote = vote;//send enum as uint to avoid conversion error\n    bet_contract.castVote(uint(vote));\n    return vote;\n  }\n  \n}\n",
+  "sourcePath": "/home/z/prj/eth/learning/bet/contracts/simple_judge.sol",
+  "ast": {
+    "absolutePath": "/home/z/prj/eth/learning/bet/contracts/simple_judge.sol",
+    "exportedSymbols": {
+      "Simple_Judge": [
+        762
+      ]
+    },
+    "id": 763,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 734,
+        "literals": [
+          "solidity",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:22:3"
+      },
+      {
+        "absolutePath": "/home/z/prj/eth/learning/bet/contracts/judge_interface.sol",
+        "file": "./judge_interface.sol",
+        "id": 735,
+        "nodeType": "ImportDirective",
+        "scope": 763,
+        "sourceUnit": 733,
+        "src": "24:32:3",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/home/z/prj/eth/learning/bet/contracts/bet.sol",
+        "file": "./bet.sol",
+        "id": 736,
+        "nodeType": "ImportDirective",
+        "scope": 763,
+        "sourceUnit": 717,
+        "src": "57:20:3",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 737,
+              "name": "Judge",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 732,
+              "src": "105:5:3",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Judge_$732",
+                "typeString": "contract Judge"
+              }
+            },
+            "id": 738,
+            "nodeType": "InheritanceSpecifier",
+            "src": "105:5:3"
+          }
+        ],
+        "contractDependencies": [
+          732
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 762,
+        "linearizedBaseContracts": [
+          762,
+          732
+        ],
+        "name": "Simple_Judge",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 760,
+              "nodeType": "Block",
+              "src": "181:153:3",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 748,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 745,
+                      "name": "vote",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 743,
+                      "src": "187:4:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_enum$_Vote_$724",
+                        "typeString": "enum Judge.Vote"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 746,
+                        "name": "Vote",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 724,
+                        "src": "194:4:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_enum$_Vote_$724_$",
+                          "typeString": "type(enum Judge.Vote)"
+                        }
+                      },
+                      "id": 747,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "lValueRequested": false,
+                      "memberName": "Hung",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "194:9:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_enum$_Vote_$724",
+                        "typeString": "enum Judge.Vote"
+                      }
+                    },
+                    "src": "187:16:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_Vote_$724",
+                      "typeString": "enum Judge.Vote"
+                    }
+                  },
+                  "id": 749,
+                  "nodeType": "ExpressionStatement",
+                  "src": "187:16:3"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "id": 754,
+                            "name": "vote",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 743,
+                            "src": "306:4:3",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_enum$_Vote_$724",
+                              "typeString": "enum Judge.Vote"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_enum$_Vote_$724",
+                              "typeString": "enum Judge.Vote"
+                            }
+                          ],
+                          "id": 753,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "nodeType": "ElementaryTypeNameExpression",
+                          "src": "301:4:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_uint256_$",
+                            "typeString": "type(uint256)"
+                          },
+                          "typeName": "uint"
+                        },
+                        "id": 755,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "typeConversion",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "301:10:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 750,
+                        "name": "bet_contract",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 740,
+                        "src": "279:12:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_Bet_$716",
+                          "typeString": "contract Bet"
+                        }
+                      },
+                      "id": 752,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "castVote",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 516,
+                      "src": "279:21:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_nonpayable$_t_uint256_$returns$__$",
+                        "typeString": "function (uint256) external"
+                      }
+                    },
+                    "id": 756,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "279:33:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 757,
+                  "nodeType": "ExpressionStatement",
+                  "src": "279:33:3"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 758,
+                    "name": "vote",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 743,
+                    "src": "325:4:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_Vote_$724",
+                      "typeString": "enum Judge.Vote"
+                    }
+                  },
+                  "functionReturnParameters": 744,
+                  "id": 759,
+                  "nodeType": "Return",
+                  "src": "318:11:3"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 761,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "castVote",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 741,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 740,
+                  "name": "bet_contract",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 761,
+                  "src": "134:16:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_Bet_$716",
+                    "typeString": "contract Bet"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 739,
+                    "name": "Bet",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 716,
+                    "src": "134:3:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_Bet_$716",
+                      "typeString": "contract Bet"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "133:18:3"
+            },
+            "returnParameters": {
+              "id": 744,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 743,
+                  "name": "vote",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 761,
+                  "src": "170:9:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_Vote_$724",
+                    "typeString": "enum Judge.Vote"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 742,
+                    "name": "Vote",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 724,
+                    "src": "170:4:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_Vote_$724",
+                      "typeString": "enum Judge.Vote"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "169:11:3"
+            },
+            "scope": 762,
+            "src": "116:218:3",
+            "stateMutability": "nonpayable",
+            "superFunction": 731,
+            "visibility": "external"
+          }
+        ],
+        "scope": 763,
+        "src": "80:259:3"
+      }
+    ],
+    "src": "0:340:3"
+  },
+  "legacyAST": {
+    "absolutePath": "/home/z/prj/eth/learning/bet/contracts/simple_judge.sol",
+    "exportedSymbols": {
+      "Simple_Judge": [
+        762
+      ]
+    },
+    "id": 763,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 734,
+        "literals": [
+          "solidity",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:22:3"
+      },
+      {
+        "absolutePath": "/home/z/prj/eth/learning/bet/contracts/judge_interface.sol",
+        "file": "./judge_interface.sol",
+        "id": 735,
+        "nodeType": "ImportDirective",
+        "scope": 763,
+        "sourceUnit": 733,
+        "src": "24:32:3",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/home/z/prj/eth/learning/bet/contracts/bet.sol",
+        "file": "./bet.sol",
+        "id": 736,
+        "nodeType": "ImportDirective",
+        "scope": 763,
+        "sourceUnit": 717,
+        "src": "57:20:3",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 737,
+              "name": "Judge",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 732,
+              "src": "105:5:3",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Judge_$732",
+                "typeString": "contract Judge"
+              }
+            },
+            "id": 738,
+            "nodeType": "InheritanceSpecifier",
+            "src": "105:5:3"
+          }
+        ],
+        "contractDependencies": [
+          732
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 762,
+        "linearizedBaseContracts": [
+          762,
+          732
+        ],
+        "name": "Simple_Judge",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 760,
+              "nodeType": "Block",
+              "src": "181:153:3",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 748,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 745,
+                      "name": "vote",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 743,
+                      "src": "187:4:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_enum$_Vote_$724",
+                        "typeString": "enum Judge.Vote"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 746,
+                        "name": "Vote",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 724,
+                        "src": "194:4:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_enum$_Vote_$724_$",
+                          "typeString": "type(enum Judge.Vote)"
+                        }
+                      },
+                      "id": 747,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "lValueRequested": false,
+                      "memberName": "Hung",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "194:9:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_enum$_Vote_$724",
+                        "typeString": "enum Judge.Vote"
+                      }
+                    },
+                    "src": "187:16:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_Vote_$724",
+                      "typeString": "enum Judge.Vote"
+                    }
+                  },
+                  "id": 749,
+                  "nodeType": "ExpressionStatement",
+                  "src": "187:16:3"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "id": 754,
+                            "name": "vote",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 743,
+                            "src": "306:4:3",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_enum$_Vote_$724",
+                              "typeString": "enum Judge.Vote"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_enum$_Vote_$724",
+                              "typeString": "enum Judge.Vote"
+                            }
+                          ],
+                          "id": 753,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "nodeType": "ElementaryTypeNameExpression",
+                          "src": "301:4:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_uint256_$",
+                            "typeString": "type(uint256)"
+                          },
+                          "typeName": "uint"
+                        },
+                        "id": 755,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "typeConversion",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "301:10:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 750,
+                        "name": "bet_contract",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 740,
+                        "src": "279:12:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_Bet_$716",
+                          "typeString": "contract Bet"
+                        }
+                      },
+                      "id": 752,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "castVote",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 516,
+                      "src": "279:21:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_nonpayable$_t_uint256_$returns$__$",
+                        "typeString": "function (uint256) external"
+                      }
+                    },
+                    "id": 756,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "279:33:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 757,
+                  "nodeType": "ExpressionStatement",
+                  "src": "279:33:3"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 758,
+                    "name": "vote",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 743,
+                    "src": "325:4:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_Vote_$724",
+                      "typeString": "enum Judge.Vote"
+                    }
+                  },
+                  "functionReturnParameters": 744,
+                  "id": 759,
+                  "nodeType": "Return",
+                  "src": "318:11:3"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 761,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "castVote",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 741,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 740,
+                  "name": "bet_contract",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 761,
+                  "src": "134:16:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_Bet_$716",
+                    "typeString": "contract Bet"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 739,
+                    "name": "Bet",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 716,
+                    "src": "134:3:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_Bet_$716",
+                      "typeString": "contract Bet"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "133:18:3"
+            },
+            "returnParameters": {
+              "id": 744,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 743,
+                  "name": "vote",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 761,
+                  "src": "170:9:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_Vote_$724",
+                    "typeString": "enum Judge.Vote"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 742,
+                    "name": "Vote",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 724,
+                    "src": "170:4:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_Vote_$724",
+                      "typeString": "enum Judge.Vote"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "169:11:3"
+            },
+            "scope": 762,
+            "src": "116:218:3",
+            "stateMutability": "nonpayable",
+            "superFunction": 731,
+            "visibility": "external"
+          }
+        ],
+        "scope": 763,
+        "src": "80:259:3"
+      }
+    ],
+    "src": "0:340:3"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.0+commit.1d4f565a.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.0-beta.2",
+  "updatedAt": "2018-12-18T19:09:58.456Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

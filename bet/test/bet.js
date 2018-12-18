@@ -1,6 +1,6 @@
 var Bet = artifacts.require('Bet');
 
-// 
+ 
 contract('bet', async (accounts) => {
 
     var initiator = accounts[0];
