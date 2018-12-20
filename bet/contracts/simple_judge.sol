@@ -5,7 +5,7 @@ import './bet.sol' ;
 import "./oraclizeAPI.sol";
 
 
-contract Simple_Judge is Judge, usingOraclize {
+contract Simple_Judge is Judge{
 
 
   function castVote(Bet bet_contract) external returns (Vote vote) {
